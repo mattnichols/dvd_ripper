@@ -1,5 +1,3 @@
-require 'themoviedb'
-
 class SearchTmdb
   def search(title)
     Tmdb::Movie.find(title)

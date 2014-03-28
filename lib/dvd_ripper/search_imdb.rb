@@ -1,5 +1,3 @@
-require 'imdb'
-
 class SearchImdb
   def search(title)
     Imdb::Search.new(title).movies

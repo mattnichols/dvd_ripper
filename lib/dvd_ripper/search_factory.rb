@@ -1,6 +1,3 @@
-require './search_imdb'
-require './search_tmdb'
-
 class SearchFactory
   def self.get(name)
     return SearchImdb.new if name == 'imdb'
