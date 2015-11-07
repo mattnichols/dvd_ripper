@@ -16,5 +16,4 @@ test.rb
 encode.log
 temp/
 log/
-
-
+*.gem

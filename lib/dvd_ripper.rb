@@ -1,4 +1,4 @@
-require "dvd_ripper/version"
+require 'dvd_ripper/version'
 
 require 'thread'
 require 'rb-fsevent'

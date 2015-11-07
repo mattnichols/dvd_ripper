@@ -8,11 +8,11 @@ module DvdRipper
     attr_accessor :config
 
     DEFAULTS = {
-      :working_dir => "~/tmp/movies",
-      :dest_dir => "~/movies",
-      :poster_dir => "~/tmp/movies/posters",
-      :distance_threshold => 0.2,
-      :tmdb_api_key => nil
+      working_dir: '~/tmp/movies',
+      dest_dir: '~/movies',
+      poster_dir: '~/tmp/movies/posters',
+      distance_threshold: 0.2,
+      tmdb_api_key: nil
     }.freeze
 
     def load
@@ -20,7 +20,7 @@ module DvdRipper
     end
 
     def read_config
-      yml = ""
+      yml = ''
       yml = File.read(config_path) if exists?
 
       return YAML.load(yml) unless yml.blank?
@@ -53,11 +53,11 @@ module DvdRipper
     end
 
     def config_path
-      File.expand_path("~/.dvd_ripper")
+      File.expand_path('~/.dvd_ripper')
     end
 
     def save!
-      File.open(config_path, "w+") do |config_file|
+      File.open(config_path, 'w+') do |config_file|
         config_file.write(config.to_yaml)
       end
     end
@@ -66,7 +66,7 @@ module DvdRipper
       config.each do |k, v|
         puts "#{k} (ENTER: #{v}):"
         new_value = $stdin.gets
-        config[k] = new_value.strip unless (new_value.strip.blank?)
+        config[k] = new_value.strip unless new_value.strip.blank?
       end
 
       save!
@@ -76,9 +76,9 @@ end
 
 ::DvdRipper::Config.instance.load
 
-  # WORKING_DIR = "/Users/mnichols/Movies/Ripping"
-  # DEST_DIR = "/Users/mnichols/Movies/Ripped"
-  # POSTER_PATH = "./Posters"
-  # DISTANCE_THRESHOLD = 0.2
+# WORKING_DIR = "/Users/mnichols/Movies/Ripping"
+# DEST_DIR = "/Users/mnichols/Movies/Ripped"
+# POSTER_PATH = "./Posters"
+# DISTANCE_THRESHOLD = 0.2
 
-  #     @api_key = "867c178725a7e646a0f108ee78781a49"
+#     @api_key = "867c178725a7e646a0f108ee78781a49"

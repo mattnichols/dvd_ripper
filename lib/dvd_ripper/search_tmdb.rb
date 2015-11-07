@@ -4,6 +4,8 @@ class SearchTmdb
   end
 end
 
-class Tmdb::Movie
-  include MovieExtensions
+module Tmdb
+  class Movie
+    include MovieExtensions
+  end
 end

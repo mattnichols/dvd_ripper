@@ -1,29 +1,29 @@
 #!/usr/bin/env ruby
 
 require 'dvd_ripper'
-require "thor"
+require 'thor'
 
 module DvdRipper
   class Cli < ::Thor
-    desc "start", "start tool"
+    desc 'start', 'start tool'
     def start
       check_config!
       dvd_ripper = ::DvdRipper::Client.new
       dvd_ripper.start
     end
-    map %w[--version -v] => :__print_version
+    map %w(--version -v) => :__print_version
 
-    desc "--version, -v", "print the version"
+    desc '--version, -v', 'print the version'
     def __print_version
       puts "DvdRipper v#{::DvdRipper::VERSION}"
     end
 
-    desc "config", "configure dvd_ripper"
+    desc 'config', 'configure dvd_ripper'
     def config
       Config.instance.prompt!
     end
 
-    desc "help", "display this help"
+    desc 'help', 'display this help'
     def help_banner
       puts <<-BANNER
         Dvd Ripper
@@ -40,14 +40,11 @@ module DvdRipper
 
     no_commands do
       def check_config!
-        unless Config.instance.exists?
-          config
-        end
+        config unless Config.instance.exists?
       end
     end
 
     # "www.themoviedb.org"
-
   end
 end
 

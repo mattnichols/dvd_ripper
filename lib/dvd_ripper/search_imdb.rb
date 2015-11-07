@@ -4,6 +4,8 @@ class SearchImdb
   end
 end
 
-class Imdb::Movie
-  include MovieExtensions
+module Imdb
+  class Movie
+    include MovieExtensions
+  end
 end
