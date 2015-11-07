@@ -19,15 +19,15 @@ Gem::Specification.new do |spec|
   spec.executables   = ["dvd_ripper"]
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency 'thor'
+  spec.add_runtime_dependency 'thor', '~> 0'
   spec.add_runtime_dependency 'nokogiri', '~> 1.6.0'
   spec.add_runtime_dependency 'themoviedb', '~> 0.0.20'
   spec.add_runtime_dependency 'imdb', '~> 0.8.1'
   spec.add_runtime_dependency 'rb-fsevent', '~> 0.9.4'
   spec.add_runtime_dependency 'levenshtein', '~> 0.2.2'
-  spec.add_runtime_dependency 'atomic-parsley-ruby' #, :git => 'https://github.com/cparratto/atomic-parsley-ruby.git'
+  spec.add_runtime_dependency 'atomic-parsley-ruby', '~> 0.0.5' #, :git => 'https://github.com/cparratto/atomic-parsley-ruby.git'
 
-  spec.add_development_dependency "bundler", "~> 1.10"
-  spec.add_development_dependency "rake", "~> 10.0"
-  spec.add_development_dependency "rspec", '~> 3.2'
+  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rspec', '~> 3.2'
 end
