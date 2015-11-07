@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/dvd_ripper.svg)](https://badge.fury.io/rb/dvd_ripper)
+
 # dvd_ripper
 
 A command line tool that will make it easy to rip and tag your dvd collection. It ties together many great tools to get the job done. -- HandBrake, AtomicParsley, exiftool, imdb and tmdb.
