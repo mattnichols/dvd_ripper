@@ -10,6 +10,7 @@ require 'themoviedb'
 require 'levenshtein'
 
 require_relative 'dvd_ripper/movie_stub.rb'
+require_relative 'dvd_ripper/movie_title.rb'
 require_relative 'dvd_ripper/movie_extensions.rb'
 require_relative 'dvd_ripper/search_factory.rb'
 require_relative 'dvd_ripper/search_imdb.rb'
