@@ -25,7 +25,15 @@ Install HandBrakeCLI: [downloads](https://handbrake.fr/downloads2.php)
 
 ## Usage
 
+### Interactive DVD Ripping
+
     $ dvd_ripper
+
+### Tag existing movie file
+
+The filename should have the title and year in the following format: /path/title (year).mov
+
+    $ dvd_ripper tag /path/to_file
 
 ## Troubleshooting
 
@@ -60,3 +68,5 @@ https://github.com/ariejan/imdb
 
 * Add ability to set HandBrake encoding options
 * Add better support for TV show ripping
+ * for i in `seq 4`; do HandBrakeCLI --input /dev/dvd --title $i --preset Normal --output NameOfDisc_Title$i.mp4; done
+* Add auto-continue timeout on dvd title confirmation

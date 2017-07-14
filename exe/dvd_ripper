@@ -13,6 +13,15 @@ module DvdRipper
     end
     map %w(--version -v) => :__print_version
 
+    desc 'tag', 'tag movie file'
+    def tag(file)
+      check_config!
+      movie_title = ::DvdRipper::MovieTitle.new(file)
+      search = ::Search.new
+      movie = search.closest(movie_title.title)
+      movie.tag(file)
+    end
+
     desc '--version, -v', 'print the version'
     def __print_version
       puts "DvdRipper v#{::DvdRipper::VERSION}"
@@ -41,6 +50,7 @@ module DvdRipper
     no_commands do
       def check_config!
         config unless Config.instance.exists?
+        Tmdb::Api.key(Config.instance.tmdb_api_key)
       end
     end
 
