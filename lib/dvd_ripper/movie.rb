@@ -18,7 +18,9 @@ class Movie
       poster_file_path = File.expand_path(File.join(::DvdRipper::Config.instance.poster_dir, poster_path))
       poster = File.open(poster_file_path, 'wb')
       begin
-        open("http://image.tmdb.org/t/p/w500#{poster_path}", 'rb') do |download|
+        poster_uri = "http://image.tmdb.org/t/p/w500#{poster_path}"
+        puts "Getting poster #{poster_uri}"
+        open(poster_uri, 'rb') do |download|
           poster.write(download.read)
         end
       ensure
